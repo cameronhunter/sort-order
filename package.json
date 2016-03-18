@@ -1,7 +1,7 @@
 {
   "name": "sort-order",
   "version": "0.0.0",
-  "description": "Chain sort functions",
+  "description": "Combine a series of sort functions to create complex sort orders",
   "author": "Cameron Hunter <hello@cameronhunter.co.uk>",
   "license": "MIT",
   "main": "build/index.js",
