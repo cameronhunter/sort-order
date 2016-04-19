@@ -12,13 +12,13 @@ const field = (field) => (a, b) => (a[field] - b[field]);
 const ordering = sortOrder(creator, field('joinTime'), field('id'));
 
 test(t => {
-  t.same([a, b, c, d].sort(ordering), [a, b, c, d]);
+  t.deepEqual([a, b, c, d].sort(ordering), [a, b, c, d]);
 });
 
 test(t => {
-  t.same([d, c, b, a].sort(ordering), [a, b, c, d]);
+  t.deepEqual([d, c, b, a].sort(ordering), [a, b, c, d]);
 });
 
 test(t => {
-  t.same([b, a, c, d].sort(ordering), [a, b, c, d]);
+  t.deepEqual([b, a, c, d].sort(ordering), [a, b, c, d]);
 });
