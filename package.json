@@ -13,7 +13,7 @@
   },
   "files": [
     "src",
-    "bin"
+    "build"
   ],
   "devDependencies": {
     "ava": "^0.14.0",
