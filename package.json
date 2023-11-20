@@ -10,9 +10,9 @@
     "build": "tsc -p tsconfig.build.json",
     "test": "vitest",
     "release": "pnpm run build && pnpm run publish:npm && pnpm run publish:github",
-    "publish:github": "pnpm run rewrite:package_name && npm_config_registry=https://npm.pkg.github.com/ pnpm changeset publish",
     "publish:npm": "npm_config_registry=https://registry.npmjs.org/ pnpm changeset publish",
-    "rewrite:package_name": "jq '.name |= \"@cameronhunter/\" + .' package.json > package-github.json && mv package-github.json package.json"
+    "publish:github": "pnpm run github:set_scope && npm_config_registry=https://npm.pkg.github.com/ pnpm changeset publish",
+    "github:set_scope": "jq --arg githubScope \"$GITHUB_REPOSITORY_OWNER\" '.name |= (if (index(\"@\") == null) then \"@\" + $githubScope + \"/\" + . else . end)' package.json > package-github.json && mv package-github.json package.json"
   },
   "files": [
     "build"
