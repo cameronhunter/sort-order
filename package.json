@@ -9,9 +9,10 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "test": "vitest",
-    "release": "pnpm run build && pnpm run publish:github && pnpm run publish:npm",
-    "publish:github": "npm_config_registry=https://npm.pkg.github.com/ pnpm changeset publish",
-    "publish:npm": "npm_config_registry=https://registry.npmjs.org/ pnpm changeset publish"
+    "release": "pnpm run build && pnpm run publish:npm && pnpm run publish:github",
+    "publish:github": "pnpm run rewrite:package_name && npm_config_registry=https://npm.pkg.github.com/ pnpm changeset publish",
+    "publish:npm": "npm_config_registry=https://registry.npmjs.org/ pnpm changeset publish",
+    "rewrite:package_name": "jq '.name |= \"@cameronhunter/\" + .' package.json > package-github.json && mv package-github.json package.json"
   },
   "files": [
     "build"
@@ -24,5 +25,9 @@
     "vitest": "^0.34.6"
   },
   "packageManager": "pnpm@8.10.5",
-  "prettier": "@cameronhunter/prettier-config"
+  "prettier": "@cameronhunter/prettier-config",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cameronhunter/sort-order.git"
+  }
 }
