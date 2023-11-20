@@ -1,0 +1,13 @@
+/node_modules
+
+# Don't mess with pending changesets
+/.changeset/*.md
+
+# Don't bother formatting the build output
+/build
+
+# Don't mess around with pnpm's lock file
+/pnpm-lock.yaml
+
+# VSCode and prettier conflict on array wrapping
+/tsconfig.*
