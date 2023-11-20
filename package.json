@@ -18,6 +18,7 @@
   ],
   "devDependencies": {
     "@cameronhunter/prettier-config": "^5.0.0",
+    "@changesets/cli": "^2.26.2",
     "@tsconfig/strictest": "^2.0.2",
     "typescript": "^5.3.2",
     "vitest": "^0.34.6"
