@@ -8,21 +8,24 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
     build:
-      name: Build
-      runs-on: ubuntu-latest
-      steps:
-          - uses: actions/checkout@v4
+        name: Build
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
 
-          - name: Use Node LTS
-            uses: actions/setup-node@v4
-            with:
-                node-version: lts/*
+            - name: Use Node LTS
+              uses: actions/setup-node@v4
+              with:
+                  node-version: lts/*
 
-          - name: Install dependencies
-            run: corepack enable && pnpm install --frozen-lockfile
+            - name: READ OWNER
+              run: echo $GITHUB_REPOSITORY_OWNER
 
-          - name: Build package
-            run: pnpm run build
+            - name: Install dependencies
+              run: corepack enable && pnpm install --frozen-lockfile
+
+            - name: Build package
+              run: pnpm run build
 
     test:
         name: Test Suite
