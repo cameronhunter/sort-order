@@ -1,6 +1,7 @@
 # `sort-order`
 
 [![npm package](https://img.shields.io/npm/v/sort-order?logo=npm)](https://www.npmjs.com/package/sort-order)
+[![npm downloads](https://img.shields.io/npm/dm/sort-order?logo=npm)](https://www.npmjs.com/package/sort-order)
 [![main branch status](https://img.shields.io/github/actions/workflow/status/cameronhunter/sort-order/post-merge.yml?logo=github&label=main)](https://github.com/cameronhunter/sort-order/actions/workflows/post-merge.yml)
 
 > Combine a series of sort functions to create complex sort orders.
