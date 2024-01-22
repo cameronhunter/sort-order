@@ -9,7 +9,7 @@ updates:
       directory: '/'
       versioning-strategy: increase
       schedule:
-          interval: 'weekly'
+          interval: 'monthly'
 
       ##
       # Use conventional commits so that an appropriate changeset can be
